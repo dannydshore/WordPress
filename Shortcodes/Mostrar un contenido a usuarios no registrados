@@ -1,6 +1,12 @@
-//Mostrar un contenido a usuarios no registrados
-//Asegúrate de insertar el código en el archivo functions.php del tema activo
+/*
+Tipo: WordPress Shortcode
+Descripción: Mostrar un contenido a usuarios no registrados.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
 
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
 add_shortcode('contenido_no_usuarios', 'contenido_no_usuarios');
 function contenido_no_usuarios($attr, $content = null) {
     extract(shortcode_atts(array(
