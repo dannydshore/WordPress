@@ -1,3 +1,4 @@
+<?php
 //Mostrar un contenido a usuarios no registrados
 //Asegúrate de insertar el código en el archivo functions.php del tema activo
 
