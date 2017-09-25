@@ -1,0 +1,15 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Cambiar el logo en la página de inicio de sesión (wp-admin).
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function cambiar_logo() {
+echo '<style type="text/css">
+h1 a {background-image:url(/images/logo.jpg) !important; }
+</style>';
+}
+add_action('login_head', 'cambiar_logo');
