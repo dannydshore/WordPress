@@ -1,0 +1,21 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Cambiar la dirección url del botón volver a la tienda.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function wc_empty_cart_redirect_url() {
+return '/inicio';
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+//En el ejemplo anterior podemos cambiar la opción “/inicio” por cualquier página de nuestro sitio 
+//o utilizar funciones predefinidas de WordPress como “site_url();”
+
+function wc_empty_cart_redirect_url() {
+return site_url();
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
