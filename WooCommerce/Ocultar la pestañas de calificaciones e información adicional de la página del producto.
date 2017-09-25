@@ -1,0 +1,16 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Ocultar la pestañas de calificaciones e información adicional de la página del producto.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function woo_remove_product_tabs( $tabs ) {
+//unset( $tabs['description'] );        
+unset( $tabs['reviews'] );          
+unset( $tabs['additional_information'] );  
+return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
