@@ -1,0 +1,28 @@
+/*
+Tipo: WordPress Shortcode
+Descripción: Mostrar un contenido a usuarios no registrados.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function content_countdown_shortcode($atts, $content = null){
+extract(shortcode_atts(array(
+'month' => '',
+'day'   => '',
+'year'  => ''
+), $atts));
+$remain = ceil((mktime( 0,0,0,(int)$month,(int)$day,(int)$year) - time())/86400);
+if( $remain > 1 ){
+return $daysremain = "<div class=\"event\">Solo faltan <b>($remain)</b> días para mostrar el contenido</div>";
+}else if($remain == 1 ){
+return $daysremain = "<div class=\"event\">Solo faltan <b>($remain)</b> día para mostrar el contenido</div>";
+}else{
+return $content;
+}
+}
+add_shortcode('cdt', 'content_countdown_shortcode');
+
+//Como se inserta el shortcode
+//[cdt month="02" day="14" year="2017"]Aquí va el contenido que deseamos ocultar hasta el 14/02/2017[/cdt]
