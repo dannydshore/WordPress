@@ -1,0 +1,21 @@
+/*
+Tipo: WordPress Shortcode
+Descripción: Mostrar un contenido solo a usuarios registrados.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function contenido_para_usuarios($attr, $content = null) {
+    extract(shortcode_atts(array(
+        'cap'  => 'read',
+        'deny' => '',
+    ), $attr));
+    if (current_user_can($cap) && !is_null($content) && !is_feed()) return $content;
+    return $deny;
+}
+add_shortcode('contenido_para_usuarios', 'contenido_para_usuarios');
+
+//Como se inserta el shortcode
+//[contenido_para_usuarios cap="read" deny="Contenido solo para usuarios registrados"]Lorem ipsum dolor sit amet[/contenido_para_usuarios]
