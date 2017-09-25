@@ -1,0 +1,15 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Función para cambiar palabras en un tema o plugin.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function translate_text($translated) { 
+$translated = str_ireplace('Acceder', 'Ingresar', $translated);
+$translated = str_ireplace('Carrito', 'Pedido', $translated);
+return $translated; 
+}
+add_filter('gettext', 'translate_text'); 
