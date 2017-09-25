@@ -1,0 +1,13 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Redirigir a los usuarios a una página después de registrase
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function wp_registro_gracias(){
+return home_url( ‘/gracias/‘ );
+}
+add_filter( 'registration_redirect', 'wp_registro_gracias' );
