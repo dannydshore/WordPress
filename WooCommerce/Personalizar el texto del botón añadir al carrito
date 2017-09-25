@@ -1,0 +1,13 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Personalizar el texto del botón añadir al carrito.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function boton_anadir_carro() {
+return __( 'Comprar', 'woocommerce' );
+}
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'boton_anadir_carro' );
