@@ -1,0 +1,13 @@
+Tipo: WordPress WooCommerce
+Descripción: Cambiar la palabra agotado por vendido.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+add_filter('woocommerce_get_availability', 'availability_filter');
+function availability_filter ($availability) {
+	$availability['availability'] = str_ireplace('Agotado', 'Vendido', $availability['availability']);
+	return $availability;
+}
