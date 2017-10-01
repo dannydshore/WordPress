@@ -1,0 +1,19 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Mostrar un mensaje antes del formulario de registro.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+add_action( 'woocommerce_before_customer_login_form', 'registration_message' );
+function registration_message() {
+    if ( get_option( 'woocommerce_enable_myaccount_registration' ) == 'yes' ) {
+	?>
+		<div class="woocommerce-info">
+			<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet, erat in blandit sollicitudin, lacus quam tempor dolor, sit amet faucibus dolor lacus mollis mauris.' ); ?></p>
+		</div>
+	<?php
+	}
+}
