@@ -1,0 +1,10 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Mostrar una cantidad de productos por página.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 3;' ), 20 );
