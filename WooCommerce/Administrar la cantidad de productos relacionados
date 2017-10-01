@@ -7,9 +7,9 @@ License: GPLv3
 */
 
 //Asegúrate de insertar el código en el archivo functions.php del tema activo
-add_filter( 'woocommerce_output_related_products_args', 'productos_relacionados_args' );
-function productos_relacionados_args( $args ) {
-$args['posts_per_page']     = 4; // número de productos
-$args['columns']            = 2; // número de columnas
+add_filter( 'woocommerce_output_related_products_args', 'related_products_args' );
+function related_products_args( $args ) {
+$args['posts_per_page']     = 4; // number of related products
+$args['columns']            = 2; // arranged in columns
 return $args;
 }
