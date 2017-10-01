@@ -1,0 +1,15 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Administrar la cantidad de productos relacionados.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+add_filter( 'woocommerce_output_related_products_args', 'productos_relacionados_args' );
+function productos_relacionados_args( $args ) {
+$args['posts_per_page']     = 4; // número de productos
+$args['columns']            = 2; // número de columnas
+return $args;
+}
