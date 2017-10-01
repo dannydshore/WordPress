@@ -1,0 +1,18 @@
+/*
+Tipo: WordPress WooCommerce
+Descripción: Definir el País y el Estado al finalizar la compra (checkout).
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+add_filter( 'default_checkout_state', 'change_default_checkout_state' ); 
+function change_default_checkout_state() {
+  return 'Distrito Federal'; // Default state code
+}
+ 
+add_filter( 'default_checkout_country', 'change_default_checkout_country' );
+function change_default_checkout_country() {
+  return 'MX'; // Default country code
+}
