@@ -1,0 +1,10 @@
+/*
+Tipo: WordPress Functions
+Descripción: Eliminar el inicio de sesión con correo (solo nombre de usuario).
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+remove_filter( 'authenticate', 'wp_authenticate_email_password', 20 );
