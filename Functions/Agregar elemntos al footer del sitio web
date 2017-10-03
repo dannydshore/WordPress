@@ -1,0 +1,13 @@
+/*
+Tipo: WordPress Functions
+Descripción: Agregar elemntos al footer del sitio web.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function footer_add() {
+echo "What you want to Display";
+}
+add_action( 'wp_footer', 'footer_add' );
