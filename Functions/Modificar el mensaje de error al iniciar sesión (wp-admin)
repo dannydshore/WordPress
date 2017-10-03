@@ -1,0 +1,13 @@
+/*
+Tipo: WordPress Functions
+Descripción: Modificar el mensaje de error al iniciar sesión (wp-admin).
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+function login_wordpress_error(){
+  return '¡Algo ha salido mal!';
+}
+add_filter( 'login_errors', 'login_wordpress_error' );
