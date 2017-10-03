@@ -1,0 +1,10 @@
+/*
+Tipo: WordPress Functions
+Descripción: Habilitar el uso de shortcodes en los widgets.
+Autor: Daniel Esparza R.
+Autor URI: https://dannydshore.com
+License: GPLv3
+*/
+
+//Asegúrate de insertar el código en el archivo functions.php del tema activo
+add_filter('widget_text','do_shortcode');
